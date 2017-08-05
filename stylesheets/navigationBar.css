@@ -1,9 +1,11 @@
 /*----- Toggle Button -----*/
 .navigationBar .toggle-nav {
-  display:none;
+  display: none;
   color: rgb(51, 51, 51);
   text-decoration: none;
-  transition:color linear 0.15s;
+  margin-top: 3px;
+  transition: color linear 0.15s;
+  transition: rotate linear 0.25s;
 }
 /*-------------------------*/
 
@@ -14,50 +16,38 @@
   width: 100%;
   overflow: hidden;
   color: rgb(51, 51, 51);
-  height: 52px;
-  border-bottom: 1px solid rgb(231, 231, 231);
-  background-color: rgba(248, 248, 248, 0.6); 
+  height: 60px;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  background-color: rgba(240, 240, 240, 0.6); 
+  transition: height linear 0.25s;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 .navigationBar .nb-content {
-    margin: 10px auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    max-width: 900px;
-    height: inherit;
-    position: relative;
+  margin: auto; /* Centered */
+  padding: 17px 25px 13px 25px;
+  max-width: 900px;
+  height: 30px; /* height + vertical paddings = .navigationBar height (60px) */
+  position: relative;
  }
 
 .navigationBar .nb-title {
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: .015em;
-    cursor: default;
-    display: block;
-    float: left;
-    margin: 0;
-    white-space: nowrap
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: .015em;
+  cursor: default;
+  display: block;
+  float: left;
+  margin: 0;
+  white-space: nowrap
 }
 
 .navigationBar .nb-menu {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0em;
-    float: right;
-    padding-top: 12px;
-}
-.navigationBar .nb-menu-link {
-  float: left;
-  color: rgb(51, 51, 51);
-  display: block;
-  text-decoration: none;
-  transition:color linear 0.15s;
-}
-
-.navigationBar .nb-menu-link:hover, .navigationBar .toggle-nav:hover, .navigationBar .nb-menu-link-current {
-  text-decoration:none;
-  color: rgba(51, 51, 51, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  float: right;
+  padding-top: 10px;
 }
 
 .navigationBar .nb-menu-items {
@@ -69,32 +59,74 @@
 
 .navigationBar .nb-menu-item {
   margin-left: 24px;
-  float: left;
+  float: left; /* Horizontal menu */
 }
-/*--------------------------*/
 
+.navigationBar .nb-menu-link {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+  transition:color linear 0.15s;
+}
+
+.navigationBar .nb-menu-link:hover, .toggle-nav:hover, .nb-menu-link-current {
+  text-decoration:none;
+  color: rgba(51, 51, 51, 0.6);
+}
+
+/*--------------------------*/
 
 /*----- Responsiveness -----*/
 @media screen and (max-width: 600px) {
-  .navigationBar .nb-menu-link {
+  .navigationBar .toggle-nav {
+    display: block;
+    float: right;
+  }
+
+  .navigationBar .nb-menu {
     display: none;
   }
-  .navigationBar .toggle-nav {
-    float: right;
-    display: block;
+
+  .navigationBar.dropdown {
+    height: 230px;
   }
-  .navigationBar-responsive {
-    position: relative;
+
+  .navigationBar.dropdown .nb-content {
+    height: 210px; /* height + vertical paddings (20px) = .navigationBar height (200px) */
   }
-  .navigationBar-responsive .toggle-nav {
-    position: absolute;
-    right: 0;
-    top: 0;
+
+  .navigationBar.dropdown .nb-menu {
+    display:inline-block;
+    padding: 0px; 
+    width: 100%;
   }
-  .navigationBar-responsive .nb-menu-link {
-    float: none;
-    display: block;
-    text-align: left;
+
+  .navigationBar.dropdown .nb-menu-items {
+    padding: 10px 32px 10px 32px;
   }
+
+  .navigationBar.dropdown .nb-menu-item {
+    float:none;
+    padding: 12px 0px 12px 0px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    margin: 0px;
+  }
+
+  .navigationBar.dropdown .nb-menu-link {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  .navigationBar.dropdown .nb-menu-item:last-child {
+    border-bottom: none;
+  }
+
+  .navigationBar.dropdown .toggle-nav {
+    color: rgba(51, 51, 51, 0.6);
+    transform: rotate(-180deg);
+  } 
+
+  .navigationBar.dropdown .toggle-nav:hover {
+    color: rgb(51, 51, 51);
+  } 
 }
 /*--------------------------*/
