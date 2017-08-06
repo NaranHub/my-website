@@ -1,8 +1,8 @@
-function responsiveNavBar() {
-    var x = document.getElementById("topNavigationBar");
-    if (x.className === "navigationBar") {
-        x.className += " dropdown";
+function nbToggle() {
+    var nb = document.getElementById("topNavigationBar");
+    if (nb.className === "navigationBar") {
+        nb.classList.add('dropdown');
     } else {
-        x.className = "navigationBar";
+        nb.classList.remove('dropdown');
     }
 }

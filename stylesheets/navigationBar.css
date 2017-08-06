@@ -5,7 +5,7 @@
   text-decoration: none;
   margin-top: 3px;
   transition: color linear 0.15s;
-  transition: rotate linear 0.25s;
+  transition: rotate ease 0.5s;
 }
 /*-------------------------*/
 
@@ -19,7 +19,7 @@
   height: 60px;
   border-bottom: 1px solid rgb(200, 200, 200);
   background-color: rgba(240, 240, 240, 0.6); 
-  transition: height linear 0.25s;
+  transition: height ease 0.5s;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
@@ -65,7 +65,7 @@
 .navigationBar .nb-menu-link {
   color: rgb(51, 51, 51);
   text-decoration: none;
-  transition:color linear 0.15s;
+  transition: color linear 0.15s;
 }
 
 .navigationBar .nb-menu-link:hover, .toggle-nav:hover, .nb-menu-link-current {
@@ -82,22 +82,24 @@
     float: right;
   }
 
-  .navigationBar .nb-menu {
-    display: none;
-  }
+   .navigationBar .nb-menu {
+    display: none; 
+    /* animation: fadeOut 1s; */
+  } 
 
   .navigationBar.dropdown {
     height: 230px;
   }
 
   .navigationBar.dropdown .nb-content {
-    height: 210px; /* height + vertical paddings (20px) = .navigationBar height (200px) */
+    height: 210px; /* height + vertical paddings (20px) = .navigationBar height (230px) */
   }
 
   .navigationBar.dropdown .nb-menu {
     display:inline-block;
     padding: 0px; 
     width: 100%;
+    animation: fadeIn 1s;
   }
 
   .navigationBar.dropdown .nb-menu-items {
@@ -116,17 +118,27 @@
     width: 100%;
     text-align: center;
   }
+
   .navigationBar.dropdown .nb-menu-item:last-child {
     border-bottom: none;
   }
 
   .navigationBar.dropdown .toggle-nav {
-    color: rgba(51, 51, 51, 0.6);
     transform: rotate(-180deg);
   } 
 
-  .navigationBar.dropdown .toggle-nav:hover {
-    color: rgb(51, 51, 51);
-  } 
 }
 /*--------------------------*/
+
+/*----- Animations -----*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+/*----------------------*/
