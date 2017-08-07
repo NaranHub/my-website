@@ -9,11 +9,11 @@ window.onload = function() {
 function nbToggle() {
     var nb = document.getElementById("topNavigationBar");
     if (nb.className === "navigationBar") {
-        document.body.addEventListener('click', dropdownCloser, false);
+        addListenerToEvents(document.body, 'click touchstart', dropdownCloser);
         nb.classList.add('dropdown');
     } 
     else {
-        document.body.removeEventListener('click', dropdownCloser, false);
+        removeListenerFromEvents(document.body, 'click touchstart', dropdownCloser);
         nb.classList.remove('dropdown');
     }
 }
@@ -21,7 +21,7 @@ function nbToggle() {
 // Closes the dropdown menu when open and clicked outside it
 function dropdownCloser(e) {
     if(e.target.id != 'topNavigationBar'){
-        document.body.removeEventListener('click', dropdownCloser, false);
+        removeListenerFromEvents(document.body, 'click touchstart', dropdownCloser);
         var nb = document.getElementById("topNavigationBar");
         nb.classList.remove('dropdown');
     }
