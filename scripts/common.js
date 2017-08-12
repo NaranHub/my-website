@@ -7,3 +7,9 @@ function addListenerToEvents(element, events, fn) {
 function removeListenerFromEvents(element, events, fn) {
   events.split(' ').forEach(e => element.removeEventListener(e, fn, false));
 }
+
+// Checks if an element is visible (not hidden)
+function isVisible(element) {
+    var style = window.getComputedStyle(element);
+    return (style.display !== 'none')
+}

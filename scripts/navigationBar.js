@@ -2,19 +2,22 @@
 window.onload = function() {
     // Adds a listener to prevent the dropdown closer to close the dropdown right after opening it
     var nb = document.getElementById("topNavigationBar");
-    nb.addEventListener('click', function(e) {e.stopPropagation()}, false);
+    addListenerToEvents(nb, 'click touchstart', function(e) {e.stopPropagation()});
 }
 
 // Deploys and collapses the dropdown menu in small devices
 function nbToggle() {
-    var nb = document.getElementById("topNavigationBar");
-    if (nb.className === "navigationBar") {
-        addListenerToEvents(document.body, 'click touchstart', dropdownCloser);
-        nb.classList.add('dropdown');
-    } 
-    else {
-        removeListenerFromEvents(document.body, 'click touchstart', dropdownCloser);
-        nb.classList.remove('dropdown');
+    var tn = document.getElementById("toggle-nav");
+    if(isVisible(tn)) {
+        var nb = document.getElementById("topNavigationBar");
+        if (nb.className === "navigationBar") {
+            addListenerToEvents(document.body, 'click touchstart', dropdownCloser);
+            nb.classList.add('dropdown');
+        } 
+        else {
+            removeListenerFromEvents(document.body, 'click touchstart', dropdownCloser);
+            nb.classList.remove('dropdown');
+        }
     }
 }
 
@@ -25,4 +28,4 @@ function dropdownCloser(e) {
         var nb = document.getElementById("topNavigationBar");
         nb.classList.remove('dropdown');
     }
-}   
+}
