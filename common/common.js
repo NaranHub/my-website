@@ -13,3 +13,8 @@ function isVisible(element) {
     var style = window.getComputedStyle(element);
     return (style.display !== 'none')
 }
+
+// Initialises the page by loading and initialising the different components
+function initPage() {
+  $('#navigationBar').load("/common/navigationBar.html #topNavigationBar", initNavigationBar);
+}

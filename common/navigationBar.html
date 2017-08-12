@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+    <head>
+        <title>Navigation bar</title>
+
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- JavaScript -->
+        <script src="/common/common.js"></script>
+        <script src="/common/navigationBar.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/common/common.css">
+        <link rel="stylesheet" href="/common/navigationBar.css">
+    </head>
+
+    <body onload="initNavigationBar()">
+        <nav class="navigationBar" id="topNavigationBar" onclick="nbToggle()">
+            <div class="nb-content">
+                <h2 class="nb-title">
+                    Title
+                </h2>
+                <a href="javascript:void(0);" id="toggle-nav">&#9776;</a> 
+                <div class="nb-menu">
+                    <ul class="nb-menu-items">
+                        <li class="nb-menu-item">
+                            <a href="#item1" class="nb-menu-link">Item 1</a>
+                        </li>
+                        <li class="nb-menu-item">
+                            <a href="#item2" class="nb-menu-link">Item 2</a>
+                        </li>
+                        <li class="nb-menu-item">
+                            <a href="#item3" class="nb-menu-link">Item 3</a>
+                        </li>
+                        <li class="nb-menu-item">
+                            <a href="#item4" class="nb-menu-link">Item 4</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+</html>
+

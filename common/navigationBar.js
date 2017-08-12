@@ -1,12 +1,13 @@
-// Sets up the navigation bar on window load 
-window.onload = function() {
+// Sets up the navigation bar (to be called once the HTML is loaded)
+function initNavigationBar() {
     // Adds a listener to prevent the dropdown closer to close the dropdown right after opening it
     var nb = document.getElementById("topNavigationBar");
-    addListenerToEvents(nb, 'click touchstart', function(e) {e.stopPropagation()});
+    addListenerToEvents(nb, 'click touchstart', e => e.stopPropagation());
 }
 
 // Deploys and collapses the dropdown menu in small devices
 function nbToggle() {
+    console.log("click!");
     var tn = document.getElementById("toggle-nav");
     if(isVisible(tn)) {
         var nb = document.getElementById("topNavigationBar");
