@@ -68,8 +68,14 @@
   transition: color linear 0.15s;
 }
 
-.navigationBar .nb-menu-link:hover, #toggle-nav:hover, .nb-menu-link-current {
-  text-decoration:none;
+.navigationBar .nb-menu-link:hover, #toggle-nav:hover, .nb-menu-link.nb-menu-link-current {
+  text-decoration: none;
+  color: rgba(51, 51, 51, 0.6);
+}
+
+.navigationBar .nb-menu-link.nb-menu-link-current {
+  text-decoration: none;
+  pointer-events: none;
   color: rgba(51, 51, 51, 0.6);
 }
 

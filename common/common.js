@@ -14,7 +14,7 @@ function isVisible(element) {
     return (style.display !== 'none')
 }
 
-// Initialises the page by loading and initialising the different components
-function initPage() {
+// Initialises the page by loading and initialising the different reusable components
+function initReusableComponents() {
   $('#navigationBar').load("/common/navigationBar.html #topNavigationBar", initNavigationBar);
 }
