@@ -18,7 +18,8 @@
   color: rgb(51, 51, 51);
   height: 60px;
   border-bottom: 1px solid rgb(200, 200, 200);
-  background-color: rgba(240, 240, 240, 0.6); 
+  /* background-color: rgba(240, 240, 240, 0.6); */
+  background: linear-gradient(to right, rgba(251, 202, 77, 0.7), rgba(255, 124, 5, 0.7));  
   transition: height ease 0.5s;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
@@ -35,6 +36,7 @@
   font-size: 24px;
   font-weight: 500;
   letter-spacing: .015em;
+  color: rgb(95, 95, 95);  
   cursor: default;
   display: block;
   float: left;
@@ -91,12 +93,17 @@
   .navigationBar .nb-menu {
     display: none; 
   } 
-
+  
+  .navigationBar .nb-content {
+    padding: 17px 15px 13px 15px;
+  }
+    
   .navigationBar.dropdown {
     height: 230px;
   }
 
   .navigationBar.dropdown .nb-content {
+    padding: 17px 20px 13px 20px;
     height: 210px; /* height + vertical paddings (20px) = .navigationBar height (230px) */
   }
 
