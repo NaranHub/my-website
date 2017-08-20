@@ -8,34 +8,34 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- JavaScript -->
-        <script src="/common/common.js"></script>
-        <script src="/common/navigationBar.js"></script>
+        <script src="/js/common.js"></script>
+        <script src="/js/navigationBar.js"></script>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="/common/common.css">
-        <link rel="stylesheet" href="/common/navigationBar.css">
+        <link rel="stylesheet" href="/css/common.css">
+        <link rel="stylesheet" href="/css/navigationBar.css">
     </head>
 
     <body onload="initNavigationBar()">
         <nav class="navigationBar" id="topNavigationBar" onclick="nbToggle()">
             <div class="nb-content">
                 <h2 class="nb-title">
-                    Title
+                    <a href="javascript:scrollToAnchor('#top');" class="nb-title-link" id="title-nav">Rubén Naranjo</a>
                 </h2>
                 <a href="javascript:void(0);" id="toggle-nav">&#9776;</a> 
                 <div class="nb-menu">
                     <ul class="nb-menu-items" id="nb-menu-items">
                         <li class="nb-menu-item">
-                            <a href="javascript:delayedRedirection('/testpage/');" class="nb-menu-link">Item 1</a>
+                            <a href="javascript:delayedRedirection('#experience');" class="nb-menu-link">Experience</a>
                         </li>
                         <li class="nb-menu-item">
-                            <a href="#item2" class="nb-menu-link">Item 2</a>
+                            <a href="javascript:delayedRedirection('#education');" class="nb-menu-link">Education</a>
                         </li>
                         <li class="nb-menu-item">
-                            <a href="#item3" class="nb-menu-link">Item 3</a>
+                            <a href="javascript:delayedRedirection('#languages');" class="nb-menu-link">Languages</a>
                         </li>
                         <li class="nb-menu-item">
-                            <a href="#item4" class="nb-menu-link">Item 4</a>
+                            <a href="javascript:delayedRedirection('#contact');" class="nb-menu-link">Contact</a>
                         </li>
                     </ul>
                 </div>

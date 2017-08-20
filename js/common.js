@@ -16,5 +16,6 @@ function isVisible(element) {
 
 // Initialises the page by loading and initialising the different reusable components
 function initReusableComponents() {
-  $('#navigationBar').load("/common/navigationBar.html #topNavigationBar", initNavigationBar);
+  $('#navigationBar').load("/html/navigationBar.html #topNavigationBar", initNavigationBar);
+  $('#footer').load("/html/footer.html #bottomFooter");
 }

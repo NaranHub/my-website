@@ -1,0 +1,18 @@
+/*----- Footer -----*/
+.footer {
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+  color: rgb(0, 0, 0);
+  height: 60px;
+  border-top: 1px solid #d6d6d6;  
+}
+
+.footer .ft-content {
+  padding: 20px 25px 20px 25px;
+  max-width: 900px;
+  height: 20px; /* height + vertical paddings = .footer height (60px) */
+  text-align: center;  
+  font-size: small;  
+}
+/*------------------*/

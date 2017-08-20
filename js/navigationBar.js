@@ -4,6 +4,10 @@ function initNavigationBar() {
     var nb = document.getElementById('topNavigationBar');
     addListenerToEvents(nb, 'click touchstart', e => e.stopPropagation());
     
+    // Adds a listener to prevent the dropdown open when tapping the title
+    var title = document.getElementById('title-nav');
+    addListenerToEvents(title, 'click touchstart', e => e.stopPropagation());
+    
     // Detect if current page is part of the menu bar and highlight it
     var url = window.location.pathname;
     var links = document.getElementById('nb-menu-items').getElementsByClassName('nb-menu-link');
@@ -42,15 +46,21 @@ function dropdownCloser(e) {
     }
 }
 
-// Delays the redirection to an URL
+// Delays the scroll to an anchor
 // Used in order to allow animations to finish before redirecting
-function delayedRedirection(URL) {
+function delayedRedirection(anchorId) {
     if(isToggleNavVisible()) {
-        setTimeout(() => { window.location = URL; }, 500);
+        setTimeout(() => { scrollToAnchor(anchorId); }, 100);
     }
     else {
-        window.location = URL;
+        scrollToAnchor(anchorId);
     }
+}
+
+// Smoothly scrolls to an anchor location
+function scrollToAnchor(anchorID) {
+    var el = $(anchorID);
+    $('html,body').animate({scrollTop: el.offset().top}, 'slow');
 }
 
 // Checks if the ToggleNav is visible (small display) or not (big display)

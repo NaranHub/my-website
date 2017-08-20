@@ -1,7 +1,7 @@
 /*----- Toggle Button -----*/
 #toggle-nav {
   display: none;
-  color: rgb(51, 51, 51);
+  color: rgb(125, 91, 0);
   text-decoration: none;
   margin-top: 3px;
   transition: color linear 0.15s;
@@ -15,18 +15,20 @@
   top: 0;
   width: 100%;
   overflow: hidden;
-  color: rgb(51, 51, 51);
+  color: rgb(0, 0, 0);
   height: 60px;
-  border-bottom: 1px solid rgb(200, 200, 200);
+  box-shadow: 0 0 10px rgba(24, 24, 24, 0.6);    
+  background: linear-gradient(to right, rgba(255, 217, 115, 0.7), rgba(255, 186, 0, 0.7));  
   /* background-color: rgba(240, 240, 240, 0.6); */
-  background: linear-gradient(to right, rgba(251, 202, 77, 0.7), rgba(255, 124, 5, 0.7));  
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* -webkit-backdrop-filter: saturate(180%) blur(20px); */
   transition: height ease 0.5s;
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 .navigationBar .nb-content {
   margin: auto; /* Centered */
-  padding: 17px 25px 13px 25px;
+  padding: 16px 25px 14px 25px;
   max-width: 900px;
   height: 30px; /* height + vertical paddings = .navigationBar height (60px) */
   position: relative;
@@ -36,7 +38,6 @@
   font-size: 24px;
   font-weight: 500;
   letter-spacing: .015em;
-  color: rgb(95, 95, 95);  
   cursor: default;
   display: block;
   float: left;
@@ -64,21 +65,26 @@
   float: left; /* Horizontal menu */
 }
 
+.navigationBar .nb-title-link {
+  color: rgb(125, 91, 0);
+  text-decoration: none;
+}
+
 .navigationBar .nb-menu-link {
-  color: rgb(51, 51, 51);
+  color: rgb(125, 91, 0);
   text-decoration: none;
   transition: color linear 0.15s;
 }
 
 .navigationBar .nb-menu-link:hover, #toggle-nav:hover, .nb-menu-link.nb-menu-link-current {
   text-decoration: none;
-  color: rgba(51, 51, 51, 0.6);
+  color: rgb(46, 5, 113);
 }
 
 .navigationBar .nb-menu-link.nb-menu-link-current {
   text-decoration: none;
   pointer-events: none;
-  color: rgba(51, 51, 51, 0.6);
+  color: rgb(46, 5, 113);
 }
 
 /*--------------------------*/
@@ -95,7 +101,7 @@
   } 
   
   .navigationBar .nb-content {
-    padding: 17px 15px 13px 15px;
+    padding: 16px 15px 14px 15px;
   }
     
   .navigationBar.dropdown {
@@ -103,7 +109,7 @@
   }
 
   .navigationBar.dropdown .nb-content {
-    padding: 17px 20px 13px 20px;
+    padding: 16px 15 13px 14px;
     height: 210px; /* height + vertical paddings (20px) = .navigationBar height (230px) */
   }
 
@@ -121,7 +127,7 @@
   .navigationBar.dropdown .nb-menu-item {
     float:none;
     padding: 12px 0px 12px 0px;
-    border-bottom: 1px solid rgb(200, 200, 200);
+    border-bottom: .5px solid rgb(125, 91, 0);
     margin: 0px;
   }
 
