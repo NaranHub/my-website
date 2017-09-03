@@ -10,7 +10,6 @@
 
 .footer .ft-content {
   padding: 20px 25px 20px 25px;
-  max-width: 900px;
   height: 20px; /* height + vertical paddings = .footer height (60px) */
   text-align: center;  
   font-size: small;  
