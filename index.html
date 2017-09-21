@@ -9,6 +9,7 @@
         
         <!-- JavaScript -->
         <script src="/js/common.js"></script>
+        <script src="/js/scroll.js"></script>
         <script src="/js/navigationBar.js"></script>
             
         <!-- CSS -->
@@ -17,12 +18,34 @@
         <link rel="stylesheet" href="/css/footer.css">
     </head>
 
-    <body onload="initReusableComponents()">
+    <body onload="initNavigationBar(); initScroll();">
         <span class="anchor" id="top"></span>            
             
-        <div id="navigationBar">
-        </div>
-
+        <nav class="navigationBar" id="topNavigationBar" onclick="nbToggle()">
+            <div class="nb-content">
+                <h2 class="nb-title">
+                    <a href="javascript:scrollToAnchor('#top');" class="nb-title-link" id="title-nav">Rubén Naranjo</a>
+                </h2>
+                <a href="javascript:void(0);" id="toggle-nav">&#9776;</a> 
+                <div class="nb-menu">
+                    <ul class="nb-menu-items" id="nb-menu-items">
+                        <li class="nb-menu-item">
+                            <a href="javascript:delayedRedirection('#experience');" class="nb-menu-link">Experience</a>
+                        </li>
+                        <li class="nb-menu-item">
+                            <a href="javascript:delayedRedirection('#education');" class="nb-menu-link">Education</a>
+                        </li>
+                        <li class="nb-menu-item">
+                            <a href="javascript:delayedRedirection('#languages');" class="nb-menu-link">Languages</a>
+                        </li>
+                        <li class="nb-menu-item">
+                            <a href="javascript:delayedRedirection('#contact');" class="nb-menu-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
         <div class="content">
             <span class="anchor" id="welcome"></span>
             <h2>
@@ -100,9 +123,12 @@
             </p>
         </div>
 
-        <div id="footer">
-        </div>
-    
+        <footer class="footer" id="bottomFooter">
+            <div class="ft-content">
+                © 2017 Rubén Naranjo Izquierdo
+            </div>
+        </footer>
+        
     </body>
 </html>
 

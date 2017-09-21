@@ -10,12 +10,6 @@ function removeListenerFromEvents(element, events, fn) {
 
 // Checks if an element is visible (not hidden)
 function isVisible(element) {
-    var style = window.getComputedStyle(element);
+    let style = window.getComputedStyle(element);
     return (style.display !== 'none')
-}
-
-// Initialises the page by loading and initialising the different reusable components
-function initReusableComponents() {
-  $('#navigationBar').load("/html/navigationBar.html #topNavigationBar", initNavigationBar);
-  $('#footer').load("/html/footer.html #bottomFooter");
 }
