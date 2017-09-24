@@ -55,3 +55,12 @@ function isToggleNavVisible() {
     let tn = document.getElementById('toggle-nav');
     return isVisible(tn);    
 }
+
+// Checks if the ToggleNav is visible (small display) and if it is, if it is dropped own
+function isToggleNavCollapsed() {
+    if (isToggleNavVisible()) {
+        let nb = document.getElementById('topNavigationBar');
+        return !nb.classList.contains('dropdown');
+    }
+    return false;
+}
