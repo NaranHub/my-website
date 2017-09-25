@@ -2,7 +2,6 @@
 
 // Todo: 
 //  Call highlightNavigationLink when deploying menu
-//  Rename file to scrollHandler
 
 class ScrollHandler {
 
